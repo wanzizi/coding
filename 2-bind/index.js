@@ -42,13 +42,14 @@ Function.prototype.myBind = function(context) {
 // 实验call将类数组转化成数组
 function testCall(a, b) {
   console.log(1, arguments);
+  var thisArgs = arguments;
   var args = (function() {
-    arguments.slice = [].slice;
+    thisArgs.slice = [].slice;
     //TODO:没有对传参做处理
     //主要是调用函数之后，返回值才是处理过的数组，这一步才让类数组转为数组
-    var result = arguments.slice();
-    delete arguments.slice;
-    console.log(2, arguments);
+    var result = thisArgs.slice();
+    delete thisArgs.slice;
+    console.log(2, thisArgs);
     return result;
   })();
   console.log(3, args);
