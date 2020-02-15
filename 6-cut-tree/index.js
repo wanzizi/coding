@@ -3,7 +3,7 @@
 // 所有的树剪掉的总长度为 C。 现在要使 C>某个值的情况下(假设为 maxLen，且大于的范围在range内)，使 h 最大。问怎么确定 h。
 
 function cutTree(list, maxLen, range) {
-  // 条件没判断
+  // 失误：条件没判断
   if (!list.length) {
     return 0;
   }
@@ -12,7 +12,7 @@ function cutTree(list, maxLen, range) {
 
   while (start <= end) {
     var res = 0;
-    // 中间值没有/2
+    // 失误：中间值没有/2
     var mid = start + Math.floor((end - start) / 2);
     for (var i = 0; i < list.length; i++) {
       if (list[i] > mid) {
@@ -23,7 +23,7 @@ function cutTree(list, maxLen, range) {
       if (res - maxLen <= range) {
         return mid;
       }
-      // 两个判断条件没写的，修改值没写对
+      // 失误：两个判断条件没写的，修改值没写对
       end = mid - range;
     } else {
       start = mid + range;
