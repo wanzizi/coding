@@ -24,3 +24,16 @@ function moneyFormat(str) {
   }
   return str;
 }
+
+//number.toLocaleString()
+
+// 千分位转普通数字
+// 1,231，转化为1231
+function numFormat(str) {
+  return str.replace(/,/g, "");
+}
+
+// ¥1,231，转化为1231. 支持各种货币呢
+function numFormat(str) {
+  return str.replace(/[^\d\.]/g, "");
+}
