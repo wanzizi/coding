@@ -5,16 +5,26 @@
  */
 
 //TODO:自己实现一遍
-function objectFactory() {
+// function objectFactory() {
 
-  var obj = new Object(),
+//   var obj = new Object(),
 
-  Constructor = [].shift.call(arguments);
+//   Constructor = [].shift.call(arguments);
 
-  obj.__proto__ = Constructor.prototype;
+//   obj.__proto__ = Constructor.prototype;
 
-  var ret = Constructor.apply(obj, arguments);
+//   var ret = Constructor.apply(obj, arguments);
 
-  return typeof ret === 'object' ? ret : obj;
+//   return typeof ret === 'object' ? ret : obj;
 
-};
+// };
+
+
+function MyNew(){
+  var obj = new Object()
+  var Constructor = Array.prototype.shift.call(arguments)
+  obj.__proto__ = Constructor.prototype
+  var result = Constructor.apply(obj,arguments)
+
+  return typeof result === 'object' ? result : obj
+}
