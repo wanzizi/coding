@@ -35,4 +35,5 @@
 31. 实现 xpath
 32. 观察者模式
 33. 发布-订阅模式
-34. 实现Object.assign
+34. Object.assign
+35. 动态规划
